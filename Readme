@@ -1,4 +1,4 @@
-WaterFall Model(Software Development LifeCycle Method)
+**WaterFall Model(Software Development LifeCycle Method)**
 
 > Requirements
     > Design 
@@ -9,7 +9,7 @@ WaterFall Model(Software Development LifeCycle Method)
 
 --------------------------------------------------------------
 
-Parameter          Monolith            Microservices
+**Parameter          Monolith            Microservices**
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Development Speed  Slow                Fast
 Code Repo          Large and complex   Small and efficient
@@ -37,7 +37,7 @@ Both the microservices will communicate using APIs
 
 --------------------------------------------------------------
 
-DevTinder
+**DevTinder**
 
 1. Create an account
 2. Login
@@ -51,11 +51,60 @@ DevTinder
 
 --------------------------------------------------------------
 
-HTTP Methods
+**HTTP Methods**
 
 1. POST
 2. GET
 3. PATCH
 4. DELETE
 
+
+--------------------------------------------------------------
+
+**Advanced routing techniques**
+
+1. /ab?c : b is optional
+    /a(bc)?d : We can group bc as well
+
+2. /ab+c : Multiple b can be in place, such as abbbbbbbbc
+    /a(bc)+d : Multiple b can be in place, such as abbbbbbbbc
+
+3. /ab*cd : It will start with ab and anything in between and end with cd
+
+4. RegEx /a/ : It means anywhere in path a is there it will work.
+    /.*fly$/ : It will start with anything and end with fly
+
+
+--------------------------------------------------------------
+
+
+**Reading the query parameters**
+
+app.get("/user", (req,res) => {
+    console.log(req.query)
+    res.send({firstName: "Akshay", lastName: "Saini"})
+})
+
+To read single parameter
+http://localhost:3000/user?userid=101
+
+To read multiple parameters
+http://localhost:3000/user?userid=101&password=testing
+
+
+**Dynamic Routes**
+
+http://localhost:3000/user/101/mypassword
+
+app.get("/user/:userid", (req,res) => {
+    console.log(req.query)
+    res.send({firstName: "Akshay", lastName: "Saini"})
+})
+
+Complex param
+
+app.get("/user/:userid/:username:/password", (req,res) => {
+    console.log(req.params)
+    res.send({firstName: "Akshay", lastName: "Saini"})
+})
 
