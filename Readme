@@ -1,0 +1,54 @@
+WaterFall Model(Software Development LifeCycle Method)
+
+> Requirements
+    > Design 
+        > Development 
+            > Testing 
+                > Deployment 
+                    > Maintainance
+
+--------------------------------------------------------------
+
+Parameter          Monolith            Microservices
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Development Speed  Slow                Fast
+Code Repo          Large and complex   Small and efficient
+Scalability        Complex             Easy
+Deployment         Complex             Hard
+Tech Stack         Restricted          Flexible
+Infra Cost         Low                 High
+Complexity         High                Low
+Fault Isolation    Hard                Easy
+Testing            Easy                Hard
+Ownership          Centralized         Distributed
+Maintenance        Hard                Easy
+Debugging          Easy                Hard
+Dev Experience     Average             Good
+
+--------------------------------------------------------------
+
+What are we buiding in Dev Tinder
+
+> Two Microservices
+    1. FrontEnd: React
+    2. Backend: Nodejs
+
+Both the microservices will communicate using APIs
+
+--------------------------------------------------------------
+
+DevTinder
+
+1. Create an account
+2. Login
+3. Update your profile
+4. Feed page-explore
+5. Send connection request
+6. See due matched
+7. See the request we've sent/received
+8. Update your profile
+
+
+--------------------------------------------------------------
+
+

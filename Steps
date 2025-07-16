@@ -1,0 +1,6 @@
+1. npm init
+2. Create src folder > Create App.js
+3.  install express : npm i express
+
+Nodemon : Server update automaticall
+npm i -g nodemon
