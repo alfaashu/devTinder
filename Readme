@@ -108,3 +108,23 @@ app.get("/user/:userid/:username:/password", (req,res) => {
     res.send({firstName: "Akshay", lastName: "Saini"})
 })
 
+
+--------------------------------------------------------------
+
+Next Function
+
+
+app.use("/user", (req, res, next) => {
+    // res.send("Route handler 1")
+    console.log("Handle the route user");
+    res.send("Response!") 
+    next()
+},
+    (req, res) => {
+        console.log("Handle the route user 2");
+        res.send("Response 2!")  
+    }
+)
+
+
+The next function is the third argument. Once the execution comes to next() it will directly jump the execution to the next route. Once immediate next route is executed, then it will come back to the next line.
