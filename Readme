@@ -126,5 +126,32 @@ app.use("/user", (req, res, next) => {
     }
 )
 
-
 The next function is the third argument. Once the execution comes to next() it will directly jump the execution to the next route. Once immediate next route is executed, then it will come back to the next line.
+
+--------------------------------------------------------------
+
+Middlewares & Error handles
+
+> What is Middleware?
+
+    Middleware in Express.js refers to functions that execute during the lifecycle of a request to the Express server. These functions have access to the request object (req), the response object (res), and a next function that passes control to the next middleware in the stack. Middleware functions can:
+
+    Execute any code.
+    Modify the request and response objects.
+    End the request-response cycle.
+    Call the next middleware function in the stack.
+
+    Typical middleware examples include authentication checks, logging, request parsing (like body-parser), handling errors, and enabling CORS.
+
+> Why Do We Need Middleware in Express.js?
+    Middleware provides a structured and modular way to:
+
+    Reuse common logic
+    Intercept and process requests
+    Maintain clean code
+    Handle errors
+
+
+
+
+
