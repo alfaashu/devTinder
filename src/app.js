@@ -5,7 +5,6 @@ const User = require("./models/user")
 
 app.use(express.json())
 
-
 // Signup 
 app.post("/signup", async (req, res) => {
     const user = new User(req.body);
@@ -44,12 +43,35 @@ app.get("/feed", async (req, res) => {
     }
 })
 
+// Delete a user
+app.delete("/user", async (req, res) => {
+    const userId = req.body.userId
+    try {
+        const user = await User.findByIdAndDelete(userId)
+        res.send("User deleted successfully")
+    } catch (err) {
+        res.status(400).send("Something went wrong")
+    }
+})
+
+// Update a user
+app.patch("/user", async (req, res)=> {
+    const userId = req.body.userId
+    const data = req.body
+    try {
+        await User.findByIdAndUpdate({_id: userId}, data)
+        res.send("User updated successfully")
+    } catch (err) {
+        res.status(400).send("Something went wrong")
+    }
+})
+
 connectDB().then(() => {
     console.log("Databse connected successfully");
     app.listen(7777, () => {
     console.log("Server is successfully listening on port 3000");
 })
 }).catch( err => {
-    console.log("Database cannection unsuccessfull");
+    console.log("Database connection unsuccessfull");
 })
 
