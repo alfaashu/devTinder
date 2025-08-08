@@ -63,6 +63,8 @@ Both the microservices will communicate using APIs
 
 **Advanced routing techniques**
 
+Express 5 does not support regex.if we still try to use uh regex in express 5 it will just directly crash our app.
+
 1. /ab?c : b is optional
     /a(bc)?d : We can group bc as well
 
@@ -80,16 +82,19 @@ Both the microservices will communicate using APIs
 
 **Reading the query parameters**
 
-app.get("/user", (req,res) => {
-    console.log(req.query)
-    res.send({firstName: "Akshay", lastName: "Saini"})
+http://localhost:3000/search?term=books&limit=10&page=2
+
+
+app.get("/search", (req, res, next) => {
+    const searchTerm = req.query.term
+    const limit = req.query.limit
+    const page = req.query.page
+    res.send(`Search Term: ${searchTerm}, Limit: ${limit}, Page: ${page}`)
 })
 
 To read single parameter
-http://localhost:3000/user?userid=101
+http://localhost:3000/search?term=books&limit=10&page=2
 
-To read multiple parameters
-http://localhost:3000/user?userid=101&password=testing
 
 
 **Dynamic Routes**
