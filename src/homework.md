@@ -38,3 +38,9 @@ install nodemon
 > Push some documents using API calls from postman
 > Error handling using try, catch
 
+> JS Object vs JSON(difference)
+> Add the express.json middleware to your app
+> Make your signup API dynamic to receive data from the end user
+> User.findOne with the duplicate email ids, which object returned
+> API - GET user by email
+> API - Feed API - GET /feed - get all th eusers from the database
