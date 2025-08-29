@@ -44,3 +44,21 @@ install nodemon
 > User.findOne with the duplicate email ids, which object returned
 > API - GET user by email
 > API - Feed API - GET /feed - get all th eusers from the database
+> API - Get user by ID
+> Create a delete user API
+> Difference between PATCH and PUT
+> API - Update a user
+> Explore the Mongoose Documentation for model methods
+> What are options in a Model.findOneAndUpdate method, explore more about it
+> API - Update the user with the email ID
+
+> Explore schematype options from the documentation
+> Add required, unique, lowercase, min, minLength, trim
+> Add default
+> Create a custom validate function for gender
+> Improve the DB scheme - Put all appropriate validations on each field in Schema
+> Add timestamps to the userSchema 
+> Add API level validations on Patch request & signup post API
+> Add API validation for each field
+
+<!-- Episode 8 : 20mins left  -->
