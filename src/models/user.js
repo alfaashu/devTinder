@@ -1,5 +1,6 @@
 
 const mongoose = require("mongoose")
+const validator = require("validator")
 
 const userSchema = mongoose.Schema(
     {
@@ -16,11 +17,20 @@ const userSchema = mongoose.Schema(
         unique: true,
         lowercase: true,
         trim: true,
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error("Invalid email address" + value)
+            }
+        }
     },
     password: {
         type: String,
         required: true,
-        trim: true
+        validate(value){
+            if(!validator.isStrongPassword(value)){
+                throw new Error("Weak password" + value)
+            }
+        }
     },
     age: {
         type: Number,
@@ -36,7 +46,12 @@ const userSchema = mongoose.Schema(
     },
     photoUrl: {
         type: String,
-        default: "https://commutiny.in/sites/default/files/default_images/user.png"
+        default: "https://commutiny.in/sites/default/files/default_images/user.png",
+        validate(value){
+            if(!validator.isURL(value)){
+                throw new Error("Invalid URL" + value)
+            }
+        }
     },
     about: {
         type: String,

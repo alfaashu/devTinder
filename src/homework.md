@@ -60,5 +60,7 @@ install nodemon
 > Add timestamps to the userSchema 
 > Add API level validations on Patch request & signup post API
 > Add API validation for each field
+> Install Vlidator
+> Explore the validator library funcations and use validator funcations for password, email etc.
 
 <!-- Episode 8 : 20mins left  -->
